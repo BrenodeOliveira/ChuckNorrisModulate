@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ChuckModularizate</string>
+    <string name="content_arrow">Arrow to select category</string>
+    <string name="category_placeholder">Categoria 1</string>
+</resources>
