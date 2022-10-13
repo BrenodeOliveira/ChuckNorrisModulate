@@ -6,6 +6,8 @@ import androidx.core.view.isVisible
 import com.breno.chuckmodularizate.databinding.ActivityMainBinding
 import com.breno.chuckmodularizate.presentation.adapter.CategoryAdapter
 import com.breno.chuckmodularizate.presentation.viewmodel.MainViewModel
+import com.breno.navigation.JokeActivityNavigation
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val viewModel: MainViewModel by viewModel()
     private val adapterCategory: CategoryAdapter = fetchAdapter()
+    private val jokeActivityNavigation: JokeActivityNavigation by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +53,6 @@ class MainActivity : AppCompatActivity() {
     private fun fetchAdapter() = CategoryAdapter(::itemClicked)
 
     private fun itemClicked(category: String) {
-        //navigation
+        jokeActivityNavigation.newIntent(this, category)
     }
 }

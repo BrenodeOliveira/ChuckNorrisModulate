@@ -1,6 +1,8 @@
 package com.breno.chuckmodularizate.di
 
 import android.app.Application
+import com.breno.di.networkModule
+import com.breno.generatejoke.presentation.navigation.di.navigationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -9,7 +11,9 @@ internal class MyApplication: Application() {
         super.onCreate()
         startKoin {
             androidContext(applicationContext)
-            modules(dataModule, domainModule, presentationModule)
+            val listModules = listOf(dataModule, domainModule,
+                presentationModule, navigationModule, networkModule)
+            modules(listModules)
         }
     }
 }

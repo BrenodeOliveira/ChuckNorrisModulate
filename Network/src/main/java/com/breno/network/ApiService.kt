@@ -1,9 +1,8 @@
-package com.breno.chuckmodularizate.data.remote.retrofit
+package com.breno.network
 
+import com.breno.commons.consts.NetworkConsts.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
-internal const val BASE_URL = "https://api.chucknorris.io/jokes/"
 
 object ApiService {
 
