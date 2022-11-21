@@ -10,7 +10,7 @@ import com.breno.network.HttpClient
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-val dataModule = module {
+val dataCategoryModule = module {
     factory {
         get<HttpClient>().create(service = CategoryService::class.java)
     }
