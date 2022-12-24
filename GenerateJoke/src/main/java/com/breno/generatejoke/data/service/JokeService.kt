@@ -6,6 +6,6 @@ import retrofit2.http.Query
 
 internal interface JokeService {
 
-    @GET("random?category={category}")
+    @GET("random")
     suspend fun getGeneratedJoke(@Query("category") category: String): JokeData
 }
